@@ -29,9 +29,11 @@ class RecyclerAdapter(private val users: ArrayList<User>): RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.onBind(user = users[position]) //the user = is not necessary.
-
+        //Also this is shorter way of saying
+        //override fun onBindViewHolder(holder: ViewHolder, position: Int) {return holder.onBind(user = users[position])}
     override fun getItemCount(): Int = users.size //this function basically returns how many items we have in our list (or users in list of users)
-
+        //Again, it is a shorter way of typing
+        //override fun getItemCount(): Int {return users.size}
     fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false): View {
         //Recall .inflate in onCreateViewHolder
         //The thing is inflate function was not in class ViewGroup, so if you write that line first
